@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container{
+    background-color: rgb(29, 29, 49);
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+}
+
+.wrapper{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.wrapper p{
+    position: relative;
+    display: inline-block;
+    /*
+    "display:inline-block" özelliği, etiketler üzerinde genişlik ve yükseklik ayarlamaya izin verir
+    */
+    color: #fff;
+    z-index: 9999;
+    font-size: 48px;
+    margin-bottom: 120px;
+}
+
+.wrapper p::before{
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(29, 29, 49);
+    z-index: -1;
+    border-radius: 50%;
+    left: -43%;
+    left: -31%;
+    top: -118%;
+    animation-name: shine;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shine{
+    /* elementinizin CSS özelliklerinin, animasyonun hangi aşamasında hangi değerleri alması gerektiğini belirtmenizi sağlar */
+    0%,100%{
+        box-shadow: 0px 0px 32px -12px rgb(133, 48, 117);
+    }
+    50%{
+        box-shadow: 0px 0px 32px 3px rgb(255, 0, 204)
+    }
+}
+
+button{
+    background-color: rgb(29, 29, 49);
+    padding: 10px 38px;
+    border: 1px solid #fff;
+    border-radius: 28px;
+    color: #fff;
+    transition: all .2s ease;
+    outline: 0;
+}
+
+button:not(:last-child){
+    margin-right: 20px;
+}
+
+button:hover,
+button:focus{
+    border-color: rgb(133, 48, 117);
+    color: rgb(133, 48, 117);
+    box-shadow: 0px 4px 27px -12px rg;
+}
